@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!--<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>-->
@@ -14,23 +18,23 @@
     <div class="slider grey darken-4">
         <ul class="slides ">
             <li>
-                <img src="/static/images/food.jpg">
+                <img class="responsive-img" src="/static/images/foodimg1.jpg">
                 <!-- random image -->
-                <div class="caption center-align">
-                    <h3>Welcome to Naija Recipes</h3>
-                    <h5 class="light grey-text text-lighten-3">Browse through our Tasty Recipes.</h5>
+                <div class="caption left-align">
+                    <h3 class="black-text">Welcome to Naija Recipes</h3>
+                    <h5 class="black-text">Browse through our Tasty Recipes.</h5>
                 </div>
             </li>
             <li>
-                <img src="/static/images/food2.jpg">
+                <img class="responsive-img" src="/static/images/foodpic2.jpg">
                 <!-- random image -->
-                <div class="caption left-align">
+                <div class="caption center-align">
                     <h3>Submit Recipes</h3>
                     <h5 class="light grey-text text-lighten-3">Easily share your own recipe on our site.</h5>
                 </div>
             </li>
             <li>
-                <img src="/static/images/food3.jpg">
+                <img class="responsive-img" src="/static/images/foodimg3.jpg">
                 <!-- random image -->
                 <div class="caption right-align">
                     <h3>Edit Recipes</h3>
@@ -38,17 +42,17 @@
                 </div>
             </li>
             <li>
-                <img src="/static/images/food4.jpg">
+                <img class="responsive-img" src="/static/images/foodimg4.jpg">
                 <!-- random image -->
-                <div class="caption center-align">
+                <div class="caption right-align">
                     <h3>Delete Recipes</h3>
                     <h5 class="light grey-text text-lighten-3">Also delete recipes you no longer want.</h5>
                 </div>
             </li>
             <li>
-                <img src="/static/images/food5.jpg">
+                <img class="responsive-img" src="/static/images/foodimg5.jpg">
                 <!-- random image -->
-                <div class="caption center-align">
+                <div class="caption left-align">
                     <h3>Happy Sharing</h3>
                     <h5 class="light grey-text text-lighten-3">Have a wonderful time .</h5>
                 </div>
@@ -61,7 +65,6 @@
     </div>
 
     <footer class="page-footer grey darken-4">
-
         <div class="footer-copyright" style="text-align: center;">
             <div class="container">
                 © 2019 All Rights Reserved. Developed by TGIStudios
@@ -78,6 +81,7 @@
             $(".button-collapse").sideNav();
             $('.slider').slider();
             $(".dropdown-button").dropdown();
+
             function disableBack() { window.history.forward(); }
             window.onload = disableBack();
         });
