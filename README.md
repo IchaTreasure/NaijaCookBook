@@ -21,6 +21,7 @@ When a user clicks the view button to view a recipe they have the option of eith
 <p> As a new user I'm able to do the following:</p>
 
 <p>• Register/ sign up to use the services.</p>
+![image](/static/images/loginpic.PNG)
 <p>• Go to the All Recipes page where all recipes will be shown. The user is also able to search for a recipe on the nav bar</p>
 <p>• The user is able to add a new recipe, by clicking on the Add Recipe.</p>
 <p>• The user is able to search for a recipe with the help of the search form on the navbar</p>
@@ -115,9 +116,9 @@ When a user clicks the view button to view a recipe they have the option of eith
 <p>• MONGO_URI : mongodb+srv://root:password@clustername-yibrd.mongodb.net/collectionname?retryWrites=true&w=majority</p>
 <p>• SECRET_KEY : secret_key</p>
 
-<p>The repository can be found on: https://github.com/IchaTreasure/NaijaRecipes</p>
+<p>The repository can be found on: https://github.com/IchaTreasure/NaijaCookBook</p>
 
-<p>The site has been deployed using GitHub Pages and is available to visit here: https://naija-recipes.herokuapp.com/</p>
+<p>The site has been deployed using GitHub Pages and is available to visit here: http://naijacookbook.herokuapp.com/</p>
 
 <h2>Credits</h2>
 <p>I would to credit the following sources for their inspiration:</p> 

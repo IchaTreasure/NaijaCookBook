@@ -38,7 +38,7 @@ def index():
 
 
 # https://github.com/PrettyPrinted/mongodb-user-login/blob/master/login_example.py
-
+# Route for logging into the web application
 @app.route('/login', methods=['POST'])
 def login():
     users = mongo.db.users
@@ -54,7 +54,7 @@ def login():
 
 
 # https://github.com/PrettyPrinted/mongodb-user-login/blob/master/login_example.py
-
+# Registering or signing Up to the web application
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
@@ -72,26 +72,27 @@ def register():
 
     return render_template('register.html')
 
-# returns the user back to the login page 
+
+# returns the user back to the login page
 @app.route('/logout')
 def logout():
     return render_template('index.html')
 
 
-# Takes the user to recipes.html page which shows all recipes in the database 
+# Takes the user to recipes.html page which shows all recipes in the database
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", Recipies=mongo.db.Recipies.find())
 
 
-# Takes the user to addRecipes.html page to add a new recipe to the database 
+# Takes the user to add recipe form to add a new recipe to the database
 @app.route('/add_recipes')
 def add_recipes():
     return render_template("addRecipes.html",
                            categories=mongo.db.categories.find())
 
 
-# Inserts the new recipe filled into the database 
+# Inserts the new recipe filled into the database
 @app.route('/insert_recipes', methods=['POST'])
 def insert_recipes():
     Recipies = mongo.db.Recipies
@@ -100,7 +101,7 @@ def insert_recipes():
     return redirect(url_for('get_recipes'))
 
 
-# Edits an already existing recipe in the database
+# Takes the user to the edit recipe form which is already populated with the recipe they wish to edit
 @app.route('/edit_recipes/<recipes_id>')
 def edit_recipes(recipes_id):
     the_recipes = mongo.db.Recipies.find_one({"_id": ObjectId(recipes_id)})
@@ -108,8 +109,7 @@ def edit_recipes(recipes_id):
     return render_template('editRecipes.html', recipe=the_recipes,
                            categories=all_categories)
 
-
-
+# Updates an already existing recipe in the database
 @app.route('/update_recipes/<recipes_id>', methods=["POST"])
 def update_recipes(recipes_id):
     Recipies = mongo.db.Recipies
@@ -126,27 +126,27 @@ def update_recipes(recipes_id):
     return redirect(url_for('get_recipes'))
 
 
-# Deletes and existing receipe and routes back to recipes.html page 
+# Deletes an existing receipe and routes back to recipes.html page
 @app.route('/delete_recipes/<recipes_id>')
 def delete_recipes(recipes_id):
     mongo.db.Recipies.remove({'_id': ObjectId(recipes_id)})
     return redirect(url_for('get_recipes'))
 
 
-#Allows the user to view the specific recipe they have selected 
+# Allows the user to view the specific recipe they have selected
 @app.route('/view_recipes/<recipes_id>', methods=["GET"])
 def view_recipes(recipes_id):
     the_recipes = mongo.db.Recipies.find_one({"_id": ObjectId(recipes_id)})
     return render_template('viewRecipes.html', recipe=the_recipes)
 
 
-# Takes the user to the contact us page 
+# Takes the user to the contact us page
 @app.route('/contact_Us')
 def contact_Us():
     return render_template("contactUs.html")
 
 
-# Shows the recipes availabe based on their speific category 
+# Shows the recipes availabe based on their speific category
 @app.route('/view_category')
 def view_category():
     cat = request.args.get('cat')
@@ -155,7 +155,7 @@ def view_category():
                            ({'category_name': cat}))
 
 
-#Shows the recipes availabe based on the users search words  
+# Shows the recipes availabe based on the users search words
 @app.route('/search_recipes', methods=['POST'])
 def search_recipes():
     regx = re.compile(request.form['browse_recipes'], re.IGNORECASE)
