@@ -21,7 +21,8 @@ When a user clicks the view button to view a recipe they have the option of eith
 <p> As a new user I'm able to do the following:</p>
 
 <p>• Register/ sign up to use the services.</p>
-![image](/static/images/loginpic.PNG)
+![](/static/images/loginpic.PNG)
+
 <p>• Go to the All Recipes page where all recipes will be shown. The user is also able to search for a recipe on the nav bar</p>
 <p>• The user is able to add a new recipe, by clicking on the Add Recipe.</p>
 <p>• The user is able to search for a recipe with the help of the search form on the navbar</p>
