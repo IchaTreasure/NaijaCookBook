@@ -31,6 +31,9 @@ When a user clicks the view button to view a recipe they have the option of eith
 <br>
 
 <p>• The user is able to add a new recipe, by clicking on the Add Recipe.</p>
+<img src="/static/images/Addrecipe.PNG">
+<br>
+
 <p>• The user is able to search for a recipe with the help of the search form on the navbar</p>
 <p>• The user is able to see a single recipe by clicking on the View Recipe botton on the recipe cards</p>
 <p>• The user is able to edit a recipe once the sinlge recipe is displayed</p>

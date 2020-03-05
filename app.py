@@ -77,6 +77,11 @@ def register():
 @app.route('/logout')
 def logout():
     return render_template('index.html')
+    
+# returns the user back to the login page
+@app.route('/rlogin')
+def rlogin():
+    return render_template('index.html')
 
 
 # Takes the user to recipes.html page which shows all recipes in the database
@@ -108,6 +113,7 @@ def edit_recipes(recipes_id):
     all_categories = mongo.db.categories.find()
     return render_template('editRecipes.html', recipe=the_recipes,
                            categories=all_categories)
+
 
 # Updates an already existing recipe in the database
 @app.route('/update_recipes/<recipes_id>', methods=["POST"])
@@ -166,4 +172,4 @@ if __name__ == '__main__':
     app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)

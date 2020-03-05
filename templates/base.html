@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 </head>
 
 <body>
@@ -21,7 +20,8 @@
             <li><a href="{{url_for('view_category')}}?cat=Main Dish">Main Dish</a></li>
             <li><a href="{{url_for('view_category')}}?cat=Side Dish">Side Dish</a></li>
         </ul>
-        <nav>
+
+        <nav Style="position: fixed; width: 100%; height: 60px; top: 0; z-index: 999;">
             <div class="nav-wrapper grey darken-4">
                 <a href="{{url_for('get_recipes')}}" class="brand-logo" Style="margin-left: 10px;">NaijaRecipes</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -35,7 +35,7 @@
                     <li>
                         <form method=POST action="{{ url_for('search_recipes') }}">
                             <div class="input-field col s3">
-                                <i class="material-icons prefix">search</i>
+                                <i class="material-icons prefix" href="{{url_for('search_recipes')}}">search</i>
                                 <input id="browse_recipes" name="browse_recipes" type="text">
                                 <label for="icon_prefix">Search Recipes</label>
                             </div>
@@ -64,6 +64,7 @@
                 </ul>
             </div>
         </nav>
+
     </header>
 
     <div class="slider grey darken-4">
@@ -71,7 +72,7 @@
             <li>
                 <img class="responsive-img" src="/static/images/foodimg1.jpg">
                 <!-- random image -->
-                <div class="caption center-align">
+                <div class="caption center-align" Style="background-color: #202020;">
                     <h3>Welcome to Naija Recipes</h3>
                     <h5>Browse through our Tasty Recipes.</h5>
                 </div>
@@ -79,7 +80,7 @@
             <li>
                 <img class="responsive-img" src="/static/images/foodpic2.jpg">
                 <!-- random image -->
-                <div class="caption center-align">
+                <div class="caption center-align" Style="background-color: #202020;">
                     <h3>Submit Recipes</h3>
                     <h5 class="light grey-text text-lighten-3">Easily share your own recipe on our site.</h5>
                 </div>
@@ -87,7 +88,7 @@
             <li>
                 <img class="responsive-img" src="/static/images/foodimg3.jpg">
                 <!-- random image -->
-                <div class="caption right-align">
+                <div class="caption center-align" Style="background-color: #202020;">
                     <h3>Edit Recipes</h3>
                     <h5 class="light grey-text text-lighten-3">Update your recipes on our site.</h5>
                 </div>
@@ -95,7 +96,7 @@
             <li>
                 <img class="responsive-img" src="/static/images/foodimg4.jpg">
                 <!-- random image -->
-                <div class="caption right-align">
+                <div class="caption center-align" Style="background-color: #202020;">
                     <h3>Delete Recipes</h3>
                     <h5 class="light grey-text text-lighten-3">Also delete recipes you no longer want.</h5>
                 </div>
@@ -103,7 +104,7 @@
             <li>
                 <img class="responsive-img" src="/static/images/foodimg5.jpg">
                 <!-- random image -->
-                <div class="caption left-align">
+                <div class="caption center-align" Style="background-color: #202020;">
                     <h3>Happy Sharing</h3>
                     <h5 class="light grey-text text-lighten-3">Have a wonderful time .</h5>
                 </div>
@@ -140,20 +141,14 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.collapsible').collapsible();
-            $('select').material_select();
-            $(".button-collapse").sideNav();
-            $('.slider').slider();
-            $(".dropdown-button").dropdown();
+    <script type="text/javascript" src="/static/Javascript/script.js"></script>
 
-
-        });
-    </script>
 </body>
 
 </html>
